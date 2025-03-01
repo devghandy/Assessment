@@ -26,18 +26,18 @@ describe('Example Test', () => {
         cy.get('[data-test="password"]').fill('secret_sauce');
         cy.get('[data-test="login-button"]').click();
         cy.get('[data-test="error"]').should('be.visible')
-          .and('contain', 'Username is required');
+          .and('contain', 'Username is required')
     });
 
 
     it('Invalid Login - No Passord', () => {
-        cy.get('[data-test="username"]').fill('standard_user');
-        cy.get('[data-test="login-button"]').click();
+        cy.get('[data-test="username"]').fill('standard_user')
+        cy.get('[data-test="login-button"]').click()
 
         // Verify error message
         cy.get('[data-test="error"]').should('be.visible')
-          .and('contain', 'Password is required');
-    });
+          .and('contain', 'Password is required')
+    })
 
-});
+})
         
